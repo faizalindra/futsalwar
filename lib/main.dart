@@ -16,47 +16,47 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Widget page = CircularProgressIndicator();
+//   Widget page = CircularProgressIndicator();
 
-  @override
-  void initState() {
-    super.initState();
-    isLogin();
-  }
+//   @override
+//   void initState() {
+//     super.initState();
+//     isLogin();
+//   }
 
-  void isLogin() async {
-    var token = await UserInfo().getToken();
-    if (token != null) {
-      setState(() {
-        page = BookingPage();
-      });
-    } else {
-      setState(() {
-        page = LoginPage();
-      });
-    }
-  }
+//   void isLogin() async {
+//     var token = await UserInfo().getToken();
+//     if (token != null) {
+//       setState(() {
+//         page = BookingPage();
+//       });
+//     } else {
+//       setState(() {
+//         page = LoginPage();
+//       });
+//     }
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Toko Kita',
-      debugShowCheckedModeBanner: false,
-      home: page,
-    );
-  }
-} //end class _MyAppState
-
-// class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
-//       title: 'Flutter Demo',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: BookingPage(),
+//       title: 'Toko Kita',
+//       debugShowCheckedModeBanner: false,
+//       home: page,
 //     );
 //   }
-// }
+// } //end class _MyAppState
+
+// class MyApp extends StatelessWidget {
+//   // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: BookingPage(),
+    );
+  }
+}

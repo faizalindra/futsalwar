@@ -34,22 +34,22 @@ class BookingBloc {
     return jsonObj['status'];
   }
 
-  static Future<bool> updateBooking({Booking booking}) async {
-    String apiUrl = ApiUrl.updateBooking(booking.id);
+  // static Future<bool> updateBooking({Booking booking}) async {
+  //   String apiUrl = ApiUrl.updateBooking(booking.id);
 
-    var body = {
-      "nama": booking.namaUser,
-      "alamat": booking.alamatUser,
-      "id_jam": booking.idJam,
-      "tgl_jadwal": booking.tglJadwal,
-      "id_lapang": booking.idLapang,
-      "notelp": booking.notelp.toString(),
-    };
-    print("Body : $body");
-    var response = await Api().post(apiUrl, body);
-    var jsonObj = json.decode(response.body);
-    return jsonObj['data'];
-  }
+  //   var body = {
+  //     "nama": booking.namaUser,
+  //     "alamat": booking.alamatUser,
+  //     "id_jam": booking.idJam,
+  //     "tgl_jadwal": booking.tglJadwal,
+  //     "id_lapang": booking.idLapang,
+  //     "notelp": booking.notelp.toString(),
+  //   };
+  //   print("Body : $body");
+  //   var response = await Api().post(apiUrl, body);
+  //   var jsonObj = json.decode(response.body);
+  //   return jsonObj['data'];
+  // }
 
   static Future<bool> deleteBooking({int id}) async {
     String apiUrl = ApiUrl.deleteBooking(id);

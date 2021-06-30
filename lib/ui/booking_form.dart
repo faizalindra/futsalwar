@@ -111,7 +111,7 @@ class _BookingFormState extends State<BookingForm> {
   //textbox jam
   Widget _jamBookingTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Jam (yy-mm-dd)"),
+      decoration: InputDecoration(labelText: "Jam (00:00 - 01:00)"),
       keyboardType: TextInputType.text,
       controller: _jamBookingTextboxController,
       validator: (value) {
@@ -125,7 +125,7 @@ class _BookingFormState extends State<BookingForm> {
 
   Widget _jadwalBookingTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Nama"),
+      decoration: InputDecoration(labelText: "Jadwal (yyyy-mm-dd)"),
       keyboardType: TextInputType.datetime,
       controller: _jadwalBookingTextboxController,
       validator: (value) {

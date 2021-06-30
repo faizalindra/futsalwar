@@ -6,9 +6,9 @@ class ApiUrl {
   static const String booking = baseUrl + '/booking';
   static const String createBooking = baseUrl + '/booking';
 
-  static String updateBooking(int id) {
-    return baseUrl + '/booking/' + id.toString() + '/update';
-  }
+  // static String updateBooking(int id) {
+  //   return baseUrl + '/booking/' + id.toString() + '/update';
+  // }
 
   static String showBooking(int id) {
     return baseUrl + '/booking/' + id.toString();
