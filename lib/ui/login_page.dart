@@ -5,6 +5,7 @@ import 'package:futsalwar/model/login.dart';
 import 'package:futsalwar/ui/booking_page.dart';
 import 'package:futsalwar/ui/registrasi_page.dart';
 import 'package:futsalwar/widget/warning_dialog.dart';
+import 'package:futsalwar/ui/home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -21,9 +22,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Futsal War"),
-      // ),
       body: SingleChildScrollView(
         child: Container(
           child: Padding(
@@ -153,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
       await UserInfo().setToken(value.token);
       await UserInfo().setUserID(value.userID);
       Navigator.pushReplacement(
-          context, new MaterialPageRoute(builder: (context) => BookingPage()));
+          context, new MaterialPageRoute(builder: (context) => HomePage()));
     }, onError: (error) {
       print(error);
       showDialog(

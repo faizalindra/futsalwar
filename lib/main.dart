@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futsalwar/ui/home.dart';
 import 'package:futsalwar/ui/login_page.dart';
 // import 'package:futsalwar/ui/registrasi_page.dart';
 // import 'package:futsalwar/ui/booking_form.dart';
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     var token = await UserInfo().getToken();
     if (token != null) {
       setState(() {
-        page = BookingPage();
+        page = HomePage();
       });
     } else {
       setState(() {
