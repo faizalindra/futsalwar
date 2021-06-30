@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login"),
+        title: Text("Futsal War"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -32,12 +32,14 @@ class _LoginPageState extends State<LoginPage> {
               key: _formKey,
               child: Column(
                 children: [
+                  logo(),
+                  SizedBox(height: 8.0),
                   _emailTextField(),
+                  SizedBox(height: 24.0),
                   _passwordTextField(),
+                  SizedBox(height: 24.0),
                   _buttonLogin(),
-                  SizedBox(
-                    height: 30,
-                  ),
+                  SizedBox(height: 24.0),
                   _menuRegistrasi()
                 ],
               ),
@@ -48,10 +50,34 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget logo() {
+    return new Container(
+      child: new Center(
+          child: new Column(
+        children: [
+          new Padding(
+            padding: new EdgeInsets.all(20.0),
+          ),
+          new Padding(
+            padding: new EdgeInsets.all(20.0),
+          ),
+          new Image.asset(
+            "img/futsalwar.png",
+            width: 300.0,
+          )
+        ],
+      )),
+    );
+  }
+
   //Membuat Textbox Email
   Widget _emailTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Email"),
+      decoration: InputDecoration(
+        labelText: 'Email',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
       keyboardType: TextInputType.emailAddress,
       controller: _emailTextboxController,
       validator: (value) {
@@ -66,7 +92,11 @@ class _LoginPageState extends State<LoginPage> {
   //membuat Textbox Password
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Password"),
+      decoration: InputDecoration(
+        labelText: 'Password',
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
       keyboardType: TextInputType.emailAddress,
       obscureText: true,
       controller: _passwordTextboxController,
@@ -125,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
         child: InkWell(
           child: Text(
             "Registrasi",
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: Colors.black54),
           ),
           onTap: () {
             Navigator.push(context,
