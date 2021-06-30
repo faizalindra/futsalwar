@@ -6,19 +6,19 @@ import 'package:futsalwar/model/produk.dart';
 
 class ProdukBloc {
   static Future<List<Produk>> getProduks() async {
-    String apiUrl = ApiUrl.listProduk;
+    String apiUrl = ApiUrl.booking;
     var response = await Api().get(apiUrl);
     var jsonObj = json.decode(response.body);
-    List<dynamic> listProduk = (jsonObj as Map<String, dynamic>)['data'];
+    List<dynamic> booking = (jsonObj as Map<String, dynamic>)['data'];
     List<Produk> produks = [];
-    for (int i = 0; i < listProduk.length; i++) {
-      produks.add(Produk.fromJson(listProduk[i]));
+    for (int i = 0; i < booking.length; i++) {
+      produks.add(Produk.fromJson(booking[i]));
     }
     return produks;
   }
 
   static Future addProduk({Produk produk}) async {
-    String apiUrl = ApiUrl.createProduk;
+    String apiUrl = ApiUrl.createBooking;
 
     var body = {
       "kode_produk": produk.kodeProduk,

@@ -140,12 +140,12 @@ class _ProdukFormState extends State<ProdukForm> {
       _isLoading = true;
     });
 
-    Produk createProduk = new Produk();
-    createProduk.kodeProduk = _kodeProdukTextboxController.text;
-    createProduk.namaProduk = _namaProdukTextboxController.text;
+    Produk createBooking = new Produk();
+    createBooking.kodeProduk = _kodeProdukTextboxController.text;
+    createBooking.namaProduk = _namaProdukTextboxController.text;
     //parse mengubah harga int menjadi string?
-    createProduk.hargaProduk = int.parse(_hargaProdukTextboxController.text);
-    ProdukBloc.addProduk(produk: createProduk).then((value) {
+    createBooking.hargaProduk = int.parse(_hargaProdukTextboxController.text);
+    ProdukBloc.addProduk(produk: createBooking).then((value) {
       Navigator.of(context).push(new MaterialPageRoute(
           builder: (BuildContext context) => ProdukPage()));
     }, onError: (error) {
