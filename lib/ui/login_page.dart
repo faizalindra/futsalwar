@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:futsalwar/bloc/login_bloc.dart';
 import 'package:futsalwar/helpers/user_info.dart';
 import 'package:futsalwar/model/login.dart';
-import 'package:futsalwar/ui/produk_page.dart';
+import 'package:futsalwar/ui/booking_page.dart';
 import 'package:futsalwar/ui/registrasi_page.dart';
 import 'package:futsalwar/widget/warning_dialog.dart';
 
@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
       await UserInfo().setToken(value.token);
       await UserInfo().setUserID(value.userID);
       Navigator.pushReplacement(
-          context, new MaterialPageRoute(builder: (context) => ProdukPage()));
+          context, new MaterialPageRoute(builder: (context) => BookingPage()));
     }, onError: (error) {
       print(error);
       showDialog(

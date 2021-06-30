@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:futsalwar/ui/login_page.dart';
 // import 'package:futsalwar/ui/registrasi_page.dart';
-// import 'package:futsalwar/ui/produk_form.dart';
-// import 'package:futsalwar/ui/produk_detail.dart';
-import 'package:futsalwar/ui/produk_page.dart';
+// import 'package:futsalwar/ui/booking_form.dart';
+// import 'package:futsalwar/ui/booking_detail.dart';
+import 'package:futsalwar/ui/booking_page.dart';
 import 'package:futsalwar/helpers/user_info.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
     var token = await UserInfo().getToken();
     if (token != null) {
       setState(() {
-        page = ProdukPage();
+        page = BookingPage();
       });
     } else {
       setState(() {
@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
 //       theme: ThemeData(
 //         primarySwatch: Colors.blue,
 //       ),
-//       home: ProdukPage(),
+//       home: BookingPage(),
 //     );
 //   }
 // }

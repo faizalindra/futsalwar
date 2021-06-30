@@ -6,15 +6,15 @@ class ApiUrl {
   static const String booking = baseUrl + '/booking';
   static const String createBooking = baseUrl + '/booking';
 
-  static String updateProduk(int id) {
-    return baseUrl + '/produk/' + id.toString() + '/update';
+  static String updateBooking(int id) {
+    return baseUrl + '/booking/' + id.toString() + '/update';
   }
 
-  static String showProduk(int id) {
-    return baseUrl + '/produk/' + id.toString();
+  static String showBooking(int id) {
+    return baseUrl + '/booking/' + id.toString();
   }
 
-  static String deleteProduk(int id) {
-    return baseUrl + '/produk/' + id.toString();
+  static String deleteBooking(int id) {
+    return baseUrl + '/booking/' + id.toString();
   }
 }
