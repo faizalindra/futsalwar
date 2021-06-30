@@ -18,11 +18,11 @@ class Booking {
   factory Booking.fromJson(Map<String, dynamic> obj) {
     return Booking(
       id: obj['id'],
-      namaUser: obj['namaUser'],
-      alamatUser: obj['alamatUser'],
-      idJam: obj['idJam'],
-      tglJadwal: obj['tglJadwal'],
-      idLapang: obj['idLapang'],
+      namaUser: obj['nama'],
+      alamatUser: obj['alamat'],
+      idJam: obj['id_jam'],
+      tglJadwal: obj['tgl_jadwal'],
+      idLapang: obj['id_lapang'],
       notelp: obj['notelp'],
     );
   }

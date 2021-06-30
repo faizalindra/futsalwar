@@ -24,27 +24,27 @@ class _BookingDetailState extends State<BookingDetail> {
         child: Column(
           children: [
             Text(
-              "Kode : ${widget.booking.namaUser}",
+              "Nama : ${widget.booking.namaUser}",
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              "Kode : ${widget.booking.alamatUser}",
+              "Alamat : ${widget.booking.alamatUser}",
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              "Kode : ${widget.booking.idJam}",
+              "Jam : ${widget.booking.idJam}",
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              "Kode : ${widget.booking.tglJadwal}",
+              "Jadwal : ${widget.booking.tglJadwal}",
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              "Nama : ${widget.booking.idLapang}",
+              "Lapangan : ${widget.booking.idLapang}",
               style: TextStyle(fontSize: 18.0),
             ),
             Text(
-              "Harga : ${widget.booking.notelp}",
+              "No Telepon : ${widget.booking.notelp}",
               style: TextStyle(fontSize: 18.0),
             ),
             _tombolHapusEdit()
