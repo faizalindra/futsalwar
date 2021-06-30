@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:futsalwar/helpers/api.dart';
 import 'package:futsalwar/helpers/api_url.dart';
 import 'package:futsalwar/model/login.dart';
-import 'package:futsalwar/model/registrasi.dart';
+// import 'package:futsalwar/model/registrasi.dart';
 
 class LoginBloc {
   static Future<Login> login({String email, String password}) async {

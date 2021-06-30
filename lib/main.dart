@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:futsalwar/ui/login_page.dart';
-import 'package:futsalwar/ui/registrasi_page.dart';
-import 'package:futsalwar/ui/produk_form.dart';
-import 'package:futsalwar/ui/produk_detail.dart';
+// import 'package:futsalwar/ui/registrasi_page.dart';
+// import 'package:futsalwar/ui/produk_form.dart';
+// import 'package:futsalwar/ui/produk_detail.dart';
 import 'package:futsalwar/ui/produk_page.dart';
 import 'package:futsalwar/helpers/user_info.dart';
 

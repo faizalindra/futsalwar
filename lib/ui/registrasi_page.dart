@@ -14,6 +14,7 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   bool _isLoading = false;
 
   final _namaTextboxController = TextEditingController();
+  final _usernameTextboxController = TextEditingController();
   final _emailTextboxController = TextEditingController();
   final _passwordTextboxController = TextEditingController();
 
@@ -33,9 +34,15 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _namaTextField(),
+                  SizedBox(height: 15.0),
+                  _usernameTextField(),
+                  SizedBox(height: 15.0),
                   _emailTextField(),
+                  SizedBox(height: 15.0),
                   _passwordTextField(),
+                  SizedBox(height: 15.0),
                   _passwordKonfirmasitextField(),
+                  SizedBox(height: 15.0),
                   _buttonRegistrasi()
                 ],
               ),
@@ -49,9 +56,32 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
 //membuat Textbox Nama
   Widget _namaTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Nama"),
+      decoration: InputDecoration(
+        labelText: "Nama",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
       keyboardType: TextInputType.text,
       controller: _namaTextboxController,
+      validator: (value) {
+        if (value.length < 3) {
+          return "Nama harus diisi minimal 3 karakter";
+        }
+        return null;
+      },
+    );
+  }
+
+  //textbox username
+  Widget _usernameTextField() {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: "Username",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
+      keyboardType: TextInputType.text,
+      controller: _usernameTextboxController,
       validator: (value) {
         if (value.length < 3) {
           return "Nama harus diisi minimal 3 karakter";
@@ -64,7 +94,11 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
 //membuat TextBox email
   Widget _emailTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Email"),
+      decoration: InputDecoration(
+        labelText: "Email",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
       keyboardType: TextInputType.emailAddress,
       controller: _emailTextboxController,
       validator: (value) {
@@ -87,7 +121,11 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
 //membuat textbox password
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Password"),
+      decoration: InputDecoration(
+        labelText: "Password",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
       keyboardType: TextInputType.text,
       controller: _passwordTextboxController,
       validator: (value) {
@@ -102,7 +140,11 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
 //membuat textbox Konfirmasi Password
   Widget _passwordKonfirmasitextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Konfirmasi Password"),
+      decoration: InputDecoration(
+        labelText: "Konfirmasi Password",
+        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+      ),
       keyboardType: TextInputType.text,
       obscureText: true,
       validator: (value) {
@@ -115,15 +157,37 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
   }
 
 //membuat tombol registrasi
+  // Widget _buttonRegistrasi() {
+  //   return ElevatedButton(
+  //       child: Text("Registrasi"),
+  //       onPressed: () {
+  //         var validate = _formKey.currentState.validate();
+  //         if (validate) {
+  //           if (!_isLoading) _submit();
+  //         }
+  //       });
+  // }
   Widget _buttonRegistrasi() {
-    return ElevatedButton(
-        child: Text("Registrasi"),
+    return Material(
+      borderRadius: BorderRadius.circular(30.0),
+      shadowColor: Colors.lightBlueAccent.shade100,
+      elevation: 5.0,
+      child: MaterialButton(
+        minWidth: 200.0,
+        height: 42.0,
         onPressed: () {
           var validate = _formKey.currentState.validate();
           if (validate) {
             if (!_isLoading) _submit();
           }
-        });
+        },
+        color: Colors.lightBlueAccent,
+        child: Text(
+          'Registrasi',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 
   void _submit() {
@@ -133,6 +197,7 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
     });
     RegistrasiBloc.registrasi(
             nama: _namaTextboxController.text,
+            username: _usernameTextboxController.text,
             email: _emailTextboxController.text,
             password: _passwordTextboxController.text)
         .then((value) {
