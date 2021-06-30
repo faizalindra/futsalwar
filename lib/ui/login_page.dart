@@ -21,9 +21,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Futsal War"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("Futsal War"),
+      // ),
       body: SingleChildScrollView(
         child: Container(
           child: Padding(
