@@ -111,14 +111,34 @@ class _LoginPageState extends State<LoginPage> {
 
   //tombol login
   Widget _buttonLogin() {
-    return ElevatedButton(
-        child: Text("Login"),
+    // return ElevatedButton(
+    //     child: Text("Login"),
+    //     onPressed: () {
+    //       var validate = _formKey.currentState.validate();
+    //       if (validate) {
+    //         if (!_isLoading) _submit();
+    //       }
+    //     });
+    return Material(
+      borderRadius: BorderRadius.circular(30.0),
+      shadowColor: Colors.lightBlueAccent.shade100,
+      elevation: 5.0,
+      child: MaterialButton(
+        minWidth: 200.0,
+        height: 42.0,
         onPressed: () {
           var validate = _formKey.currentState.validate();
           if (validate) {
             if (!_isLoading) _submit();
           }
-        });
+        },
+        color: Colors.lightBlueAccent,
+        child: Text(
+          'Login',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 
   void _submit() {
