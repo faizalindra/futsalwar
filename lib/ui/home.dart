@@ -35,10 +35,10 @@ class _HomePageState extends State<HomePage> {
   // }
 
   final List<Widget> _screens = [
-    // logoHome(),
-    // lapanganA(),
     HomeScreen(),
-    // BookingPage(),
+    JamBooking(),
+    BookingPage(),
+    // BookingPages._BookingPagesState(),
     // FavoriteScreen(),
     // AccountScreen()
   ];
@@ -207,6 +207,17 @@ class HomeScreen extends StatelessWidget {
                     // tombolNav()
                   ],
                 ))),
+      ),
+    );
+  }
+}
+
+class JamBooking extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Text('Favorite things!'),
       ),
     );
   }
