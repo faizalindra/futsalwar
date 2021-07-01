@@ -5,7 +5,7 @@ import 'package:futsalwar/bloc/booking_bloc.dart';
 import 'package:futsalwar/model/booking.dart';
 import 'package:futsalwar/ui/login_page.dart';
 import 'package:futsalwar/ui/booking_detail.dart';
-import 'package:futsalwar/ui/booking_form.dart';
+// import 'package:futsalwar/ui/booking_form.dart';
 
 class BookingPage extends StatefulWidget {
   @override
@@ -19,22 +19,6 @@ class _BookingPagesState extends State<BookingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('List Booking'),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              child: Icon(Icons.add, size: 26.0),
-              onTap: () async {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => BookingForm()));
-              },
-            ),
-          )
-        ],
-      ),
-
       //drawer logout
       drawer: Drawer(
         child: ListView(
@@ -65,28 +49,6 @@ class _BookingPagesState extends State<BookingPage> {
                 );
         },
       ),
-      // body: ListView(
-      //   children: [
-      //     ItemBooking(
-      //         booking: Booking(
-      //             id: 1,
-      //             kodeBooking: 'A001',
-      //             namaBooking: 'HP Laptop',
-      //             hargaBooking: 6700000)),
-      //     ItemBooking(
-      //         booking: Booking(
-      //             id: 1,
-      //             kodeBooking: 'A002',
-      //             namaBooking: 'Asus Laptop',
-      //             hargaBooking: 7700000)),
-      //     ItemBooking(
-      //         booking: Booking(
-      //             id: 1,
-      //             kodeBooking: 'A003',
-      //             namaBooking: 'Lenovo Laptop',
-      //             hargaBooking: 5700000)),
-      //   ],
-      // ),
     );
   } //end Widget
 } // end class _bookingPages State
@@ -110,7 +72,7 @@ class ItemBooking extends StatelessWidget {
         child: Card(
           child: ListTile(
             title: Text(booking.namaUser.toString()),
-            subtitle: Text(booking.idJam.toString()),
+            subtitle: Text(booking.idJam.toString() + "  " + booking.tglJadwal),
           ),
         ),
       ),
