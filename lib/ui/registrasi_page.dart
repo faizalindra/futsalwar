@@ -156,17 +156,6 @@ class _RegistrasiPageState extends State<RegistrasiPage> {
     );
   }
 
-//membuat tombol registrasi
-  // Widget _buttonRegistrasi() {
-  //   return ElevatedButton(
-  //       child: Text("Registrasi"),
-  //       onPressed: () {
-  //         var validate = _formKey.currentState.validate();
-  //         if (validate) {
-  //           if (!_isLoading) _submit();
-  //         }
-  //       });
-  // }
   Widget _buttonRegistrasi() {
     return Material(
       borderRadius: BorderRadius.circular(30.0),

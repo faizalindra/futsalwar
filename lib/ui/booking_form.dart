@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:futsalwar/bloc/booking_bloc.dart';
 import 'package:futsalwar/model/booking.dart';
 import 'package:futsalwar/ui/booking_page.dart';
+import 'package:futsalwar/ui/home.dart';
 import 'package:futsalwar/widget/warning_dialog.dart';
 
 // ignore: must_be_immutable
@@ -202,8 +203,8 @@ class _BookingFormState extends State<BookingForm> {
     //parse mengubah harga int menjadi string?
     createBooking.notelp = int.parse(_notelpBookingTextboxController.text);
     BookingBloc.addBooking(booking: createBooking).then((value) {
-      Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => BookingPage()));
+      Navigator.of(context).push(
+          new MaterialPageRoute(builder: (BuildContext context) => HomePage()));
     }, onError: (error) {
       showDialog(
           context: context,

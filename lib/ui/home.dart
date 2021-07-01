@@ -86,17 +86,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Container(
+        child: SingleChildScrollView(
             child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     logoHome(),
-                    SizedBox(height: 24.0),
+                    SizedBox(height: 12.0),
                     LapanganA(),
-                    SizedBox(height: 24.0),
+                    SizedBox(height: 12.0),
                     LapanganB(),
-                    SizedBox(height: 24.0),
+                    SizedBox(height: 12.0),
                   ],
                 ))),
       ),
