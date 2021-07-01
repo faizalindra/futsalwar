@@ -4,6 +4,7 @@ import 'package:futsalwar/bloc/logout_bloc.dart';
 import 'package:futsalwar/ui/login_page.dart';
 import 'package:futsalwar/ui/booking_page.dart';
 import 'package:futsalwar/ui/lapangan.dart';
+import 'package:futsalwar/ui/jam_booking.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _screens = [
     HomeScreen(),
-    JamBooking(),
+    JamPage(),
     // TestVar(),
     BookingPage(),
   ];

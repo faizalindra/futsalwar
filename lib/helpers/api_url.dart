@@ -4,6 +4,7 @@ class ApiUrl {
   static const String registrasi = baseUrl + '/registrasi';
   static const String login = baseUrl + '/login';
   static const String booking = baseUrl + '/booking';
+  static const String jam = baseUrl + '/jam';
   static const String createBooking = baseUrl + '/booking';
 
   // static String updateBooking(int id) {
