@@ -53,6 +53,8 @@ flutter:
   assets:
   - img/futsalwar.png
   - img/login_bg.jpg
+  - img/lapangan.png
+  - img/lapangan2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

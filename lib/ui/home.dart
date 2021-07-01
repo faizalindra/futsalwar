@@ -3,6 +3,7 @@ import 'package:futsalwar/ui/booking_form.dart';
 import 'package:futsalwar/bloc/logout_bloc.dart';
 import 'package:futsalwar/ui/login_page.dart';
 import 'package:futsalwar/ui/booking_page.dart';
+import 'package:futsalwar/ui/lapangan.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -101,6 +102,30 @@ Widget lapanganA() {
   );
 }
 
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Container(
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    logoHome(),
+                    SizedBox(height: 24.0),
+                    LapanganA(),
+                    SizedBox(height: 24.0),
+                    LapanganB(),
+                    SizedBox(height: 24.0),
+                    // tombolNav()
+                  ],
+                ))),
+      ),
+    );
+  }
+}
+
 Widget logoHome() {
   return new Container(
     child: new Center(
@@ -119,29 +144,6 @@ Widget logoHome() {
       ],
     )),
   );
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Container(
-            child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    logoHome(),
-                    SizedBox(height: 24.0),
-                    lapanganA(),
-                    SizedBox(height: 24.0),
-                    SizedBox(height: 24.0),
-                    // tombolNav()
-                  ],
-                ))),
-      ),
-    );
-  }
 }
 
 class JamBooking extends StatelessWidget {
