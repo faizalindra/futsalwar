@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:futsalwar/ui/booking_form.dart';
 import 'package:futsalwar/bloc/logout_bloc.dart';
 import 'package:futsalwar/ui/login_page.dart';
+import 'package:futsalwar/ui/booking_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,50 +10,64 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+  // int _selectedIndex = 0;
+  // static const TextStyle optionStyle =
+  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  // static const List<Widget> _widgetOptions = <Widget>[
+  // Text(
+  //   'Index 0: Home',
+  //   style: optionStyle,
+  // ),
+  // Text(
+  //   'Index 1: Business',
+  //   style: optionStyle,
+  // ),
+  // Text(
+  //   'Index 2: School',
+  //   style: optionStyle,
+  // ),
+  // ];
+
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
+
+  final List<Widget> _screens = [
+    // logoHome(),
+    // lapanganA(),
+    HomeScreen(),
+    // BookingPage(),
+    // FavoriteScreen(),
+    // AccountScreen()
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
+  int _activeScreenIndex = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(
       //   title: const Text('Floating Action Button Label'),
       // ),
-      body: SingleChildScrollView(
-        child: Container(
-            child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    logoHome(),
-                    SizedBox(height: 24.0),
-                    SizedBox(height: 24.0),
-                    SizedBox(height: 24.0),
-                    // tombolNav()
-                  ],
-                ))),
-      ),
+      body: _screens[_activeScreenIndex],
+      // body: SingleChildScrollView(
+      //   child: Container(
+      //       child: Padding(
+      //           padding: const EdgeInsets.all(8.0),
+      //           child: Column(
+      //             children: [
+      //               logoHome(),
+      //               SizedBox(height: 24.0),
+      //               lapanganA(),
+      //               SizedBox(height: 24.0),
+      //               SizedBox(height: 24.0),
+      //               // tombolNav()
+      //             ],
+      //           ))),
+      // ),
+
+      //Tombol Booking
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           Navigator.push(context,
@@ -63,14 +78,39 @@ class _HomePageState extends State<HomePage> {
         icon: const Icon(Icons.book_online),
         backgroundColor: Colors.pink,
       ),
+
+      //Navigasi Bar
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        currentIndex: _activeScreenIndex,
+        onTap: (index) {
+          setState(() {
+            _activeScreenIndex = index;
+          });
+        },
+        //   items: <BottomNavigationBarItem>[
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.home),
+        //       label: 'Home',
+        //       ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.access_time,
+        //       label: 'Jam Booking',
+        //       ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.book_online),
+        //       label: 'Daftar Booking',
+        //       ),
+        //   ],
+        // ),
+
+        // bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.access_time),
             label: 'Jam Booking',
           ),
           BottomNavigationBarItem(
@@ -78,10 +118,12 @@ class _HomePageState extends State<HomePage> {
             label: 'Booking List',
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+        //   currentIndex: _selectedIndex,
+        //   selectedItemColor: Colors.amber[800],
+        //   onTap: _onItemTapped,
       ),
+
+      //side bar
       drawer: Drawer(
         child: ListView(
           children: [
@@ -100,6 +142,31 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget lapanganA() {
+  return new Container(
+    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+    margin: EdgeInsets.all(20),
+    decoration: BoxDecoration(
+      color: Colors.lightBlue[50],
+      borderRadius: BorderRadius.circular(10),
+      // child: Row(
+      //   children: [
+      //     Text('Lapangan A'),
+      //     Text('Harga Rp. 160.000/jam'),
+      //     Text('Rumput Sintesis'),
+      //   ],
+      // ),
+    ),
+    child: Column(
+      children: [
+        Text('Lapangan A'),
+        Text('Harga Rp. 160.000/Jam'),
+        Text('Rumput Sintesis')
+      ],
+    ),
+  );
 }
 
 Widget logoHome() {
@@ -122,8 +189,25 @@ Widget logoHome() {
   );
 }
 
-Widget tombolNav() {
-  return Row(
-    children: [],
-  );
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        child: Container(
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    logoHome(),
+                    SizedBox(height: 24.0),
+                    lapanganA(),
+                    SizedBox(height: 24.0),
+                    SizedBox(height: 24.0),
+                    // tombolNav()
+                  ],
+                ))),
+      ),
+    );
+  }
 }
