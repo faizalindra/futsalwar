@@ -14,10 +14,8 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _screens = [
     HomeScreen(),
     JamBooking(),
+    // TestVar(),
     BookingPage(),
-    // BookingPages._BookingPagesState(),
-    // FavoriteScreen(),
-    // AccountScreen()
   ];
 
   @override
@@ -83,25 +81,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-//Widget Lapangan
-Widget lapanganA() {
-  return new Container(
-    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
-    margin: EdgeInsets.all(20),
-    decoration: BoxDecoration(
-      color: Colors.lightBlue[50],
-      borderRadius: BorderRadius.circular(10),
-    ),
-    child: Column(
-      children: [
-        Text('Lapangan A'),
-        Text('Harga Rp. 160.000/Jam'),
-        Text('Rumput Sintesis')
-      ],
-    ),
-  );
-}
-
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -118,6 +97,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: 24.0),
                     LapanganB(),
                     SizedBox(height: 24.0),
+                    // TestVar(),
                     // tombolNav()
                   ],
                 ))),

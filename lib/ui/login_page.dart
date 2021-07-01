@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futsalwar/bloc/login_bloc.dart';
 import 'package:futsalwar/helpers/user_info.dart';
-import 'package:futsalwar/model/login.dart';
-import 'package:futsalwar/ui/booking_page.dart';
 import 'package:futsalwar/ui/registrasi_page.dart';
 import 'package:futsalwar/widget/warning_dialog.dart';
 import 'package:futsalwar/ui/home.dart';
@@ -109,14 +107,6 @@ class _LoginPageState extends State<LoginPage> {
 
   //tombol login
   Widget _buttonLogin() {
-    // return ElevatedButton(
-    //     child: Text("Login"),
-    //     onPressed: () {
-    //       var validate = _formKey.currentState.validate();
-    //       if (validate) {
-    //         if (!_isLoading) _submit();
-    //       }
-    //     });
     return Material(
       borderRadius: BorderRadius.circular(30.0),
       shadowColor: Colors.lightBlueAccent.shade100,
