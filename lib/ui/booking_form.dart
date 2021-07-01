@@ -22,6 +22,7 @@ class _BookingFormState extends State<BookingForm> {
   final _namaBookingTextboxController = TextEditingController();
   final _alamatBookingTextboxController = TextEditingController();
   final _jamBookingTextboxController = TextEditingController();
+  // final _jamBooking
   final _jadwalBookingTextboxController = TextEditingController();
   final _lapangBookingTextboxController = TextEditingController();
   final _notelpBookingTextboxController = TextEditingController();
@@ -40,9 +41,9 @@ class _BookingFormState extends State<BookingForm> {
         tombolSubmit = "Ubah";
         _namaBookingTextboxController.text = widget.booking.namaUser;
         _alamatBookingTextboxController.text = widget.booking.alamatUser;
-        _jamBookingTextboxController.text = widget.booking.alamatUser;
-        _jadwalBookingTextboxController.text = widget.booking.alamatUser;
-        _lapangBookingTextboxController.text = widget.booking.alamatUser;
+        _jamBookingTextboxController.text = widget.booking.idJam;
+        _jadwalBookingTextboxController.text = widget.booking.tglJadwal;
+        _lapangBookingTextboxController.text = widget.booking.idLapang;
         _notelpBookingTextboxController.text = widget.booking.notelp.toString();
       });
     } else {
