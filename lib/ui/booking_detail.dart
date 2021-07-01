@@ -47,58 +47,57 @@ class _BookingDetailState extends State<BookingDetail> {
               "No Telepon : ${widget.booking.notelp}",
               style: TextStyle(fontSize: 18.0),
             ),
-            _tombolHapusEdit()
           ],
         ),
       ),
     );
   } //end Widget build
 
-  Widget _tombolHapusEdit() {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        //tombol edit
-        ElevatedButton(
-            child: Text("Batal Booking"),
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red)),
-            onPressed: () => confirmHapus())
-      ],
-    );
-  }
+//   Widget _tombolHapusEdit() {
+//     return Row(
+//       mainAxisSize: MainAxisSize.min,
+//       children: [
+//         //tombol edit
+//         ElevatedButton(
+//             child: Text("Batal Booking"),
+//             style: ButtonStyle(
+//                 backgroundColor: MaterialStateProperty.all(Colors.red)),
+//             onPressed: () => confirmHapus())
+//       ],
+//     );
+//   }
 
-  void confirmHapus() {
-    AlertDialog alertDialog = new AlertDialog(
-      content: Text("Yakin ingin menghapus data ini?"),
-      actions: [
-        //tombol hapus
-        ElevatedButton(
-          child: Text("Ya"),
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.green)),
-          onPressed: () {
-            BookingBloc.deleteBooking(id: widget.booking.id).then((value) {
-              Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (BuildContext context) => BookingPage()));
-            }, onError: (error) {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext contetx) => WarningDialog(
-                        description: "Hapus data gagal, silahkan coba lagi",
-                      ));
-            });
-          },
-        ),
+//   void confirmHapus() {
+//     AlertDialog alertDialog = new AlertDialog(
+//       content: Text("Yakin ingin menghapus data ini?"),
+//       actions: [
+//         //tombol hapus
+//         ElevatedButton(
+//           child: Text("Ya"),
+//           style: ButtonStyle(
+//               backgroundColor: MaterialStateProperty.all(Colors.green)),
+//           onPressed: () {
+//             BookingBloc.deleteBooking(id: widget.booking.id).then((value) {
+//               Navigator.of(context).push(new MaterialPageRoute(
+//                   builder: (BuildContext context) => BookingPage()));
+//             }, onError: (error) {
+//               showDialog(
+//                   context: context,
+//                   builder: (BuildContext contetx) => WarningDialog(
+//                         description: "Hapus data gagal, silahkan coba lagi",
+//                       ));
+//             });
+//           },
+//         ),
 
-        //tombol batal
-        ElevatedButton(
-            onPressed: () => Navigator.pop(context),
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red)),
-            child: Text("Batal")),
-      ],
-    );
-    showDialog(context: context, builder: (_) => alertDialog);
-  }
+//         //tombol batal
+//         ElevatedButton(
+//             onPressed: () => Navigator.pop(context),
+//             style: ButtonStyle(
+//                 backgroundColor: MaterialStateProperty.all(Colors.red)),
+//             child: Text("Batal")),
+//       ],
+//     );
+//     showDialog(context: context, builder: (_) => alertDialog);
+//   }
 } //end class _BookingDetailState
