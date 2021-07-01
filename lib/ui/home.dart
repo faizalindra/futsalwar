@@ -15,7 +15,6 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _screens = [
     HomeScreen(),
     JamPage(),
-    // TestVar(),
     BookingPage(),
   ];
 
@@ -98,8 +97,6 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(height: 24.0),
                     LapanganB(),
                     SizedBox(height: 24.0),
-                    // TestVar(),
-                    // tombolNav()
                   ],
                 ))),
       ),

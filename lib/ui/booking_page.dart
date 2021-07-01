@@ -19,21 +19,18 @@ class _BookingPagesState extends State<BookingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //drawer logout
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(
-              title: Text('Logout'),
-              trailing: Icon(Icons.logout),
-              onTap: () async {
-                await LogoutBloc.logout().then((value) {
-                  Navigator.pushReplacement(context,
-                      new MaterialPageRoute(builder: (context) => LoginPage()));
-                });
-              },
-            )
-          ],
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Container(
+          child: Text(
+            'Daftar Booking',
+            style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87),
+          ),
         ),
+        centerTitle: true,
       ),
       body: FutureBuilder<List>(
         future: BookingBloc.getBookings(),

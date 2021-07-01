@@ -15,6 +15,19 @@ class _JamPagesState extends State<JamPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //drawer logout
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Container(
+          child: Text(
+            'Daftar Jam Booking',
+            style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87),
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: FutureBuilder<List>(
         future: JamBloc.getJam(),
         builder: (context, snapshot) {

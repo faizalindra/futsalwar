@@ -60,19 +60,7 @@ class _BookingDetailState extends State<BookingDetail> {
       children: [
         //tombol edit
         ElevatedButton(
-            child: Text("Edit"),
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.green)),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => BookingForm(
-                            booking: widget.booking,
-                          )));
-            }),
-        ElevatedButton(
-            child: Text("Delete"),
+            child: Text("Batal Booking"),
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.red)),
             onPressed: () => confirmHapus())
@@ -87,10 +75,6 @@ class _BookingDetailState extends State<BookingDetail> {
         //tombol hapus
         ElevatedButton(
           child: Text("Ya"),
-          //cara ke-2 untuk mengganti color ElevatedButton
-          // style: ElevatedButton.styleFrom(
-          //   primary: Colors.green,
-          //   onPrimary: Colors.white,
           style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.green)),
           onPressed: () {
@@ -101,14 +85,10 @@ class _BookingDetailState extends State<BookingDetail> {
               showDialog(
                   context: context,
                   builder: (BuildContext contetx) => WarningDialog(
-                        description: "Hapus dats gagal, silahkan coba lagi",
+                        description: "Hapus data gagal, silahkan coba lagi",
                       ));
             });
           },
-          //cara ke-2 untuk mengganti color ElevatedButton
-          // style: ElevatedButton.styleFrom(
-          //   primary: Colors.green,
-          //   onPrimary: Colors.white,
         ),
 
         //tombol batal
